@@ -3,7 +3,7 @@ const toGBP = document.querySelector(".toGBP");
 const toUSD = document.querySelector(".toUSD");
 const disclaimer = document.querySelector(".disclaimer")
 const updated = document.querySelector(".updated")
-
+const d = new Date()
 
 const refreshBtn = document.querySelector("#refreshBtn");
 // Make a request for a user with a given ID
@@ -14,7 +14,7 @@ fetchRes.then(res =>
   toEUR.innerHTML = time.bpi.EUR.code + ` ` + time.bpi.EUR.symbol + time.bpi.EUR.rate;
   toGBP.innerHTML = time.bpi.GBP.code + ` ` + time.bpi.GBP.symbol + time.bpi.GBP.rate;
   toUSD.innerHTML = time.bpi.USD.code + ` ` + time.bpi.USD.symbol + time.bpi.USD.rate;
-  updated.innerHTML = `Updated: ` + time.time.updateduk;
+  updated.innerHTML = `Updated: ` + d.toDateString();
   disclaimer.innerHTML = `Disclaimer: ` + time.disclaimer;
 })
 
